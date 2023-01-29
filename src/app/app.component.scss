@@ -1,0 +1,184 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../assets/background.png");
+  background-size: cover;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 350px;
+
+  display: flex;
+
+  button {
+    position: absolute;
+    flex-basis: 5%;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+
+    span {
+      font-size: 50px;
+    }
+
+    &.left-btn {
+      left: 10px;
+      top: calc(50% - 25px);
+    }
+
+    &.right-btn {
+      right: 10px;
+      top: calc(50% - 25px);
+    }
+  }
+}
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+
+  .carousel-item {
+    box-sizing: border-box;
+    flex-basis: 20%;
+    flex-shrink: 0;
+    height: 100%;
+    transform: translateX(-100%);
+
+    display: flex;
+    align-items: stretch;
+  }
+
+}
+
+/* FORWARD ANIMATION - START */
+.carousel-track.moveForward {
+  .carousel-item {
+    animation: moveForward 0.5s ease-in;
+  }
+
+  .firstImage {
+    animation: firstToSecond 0.5s ease-in-out;
+  }
+
+  .secondImage {
+    animation: secondToMiddle 0.5s ease-in-out;
+  }
+
+  .middleImage {
+    animation: middleToFourth 0.5s ease-in-out;
+  }
+
+  .fourthImage {
+    animation: fourthToFifth 0.5s ease-in-out;
+  }
+}
+
+@keyframes fourthToFifth {
+  100% {
+    transform: scale(0.7) rotateX(-30deg) rotateY(-60deg) translate3d(-60px, 100px, 0px);
+  }
+}
+
+@keyframes middleToFourth {
+  100% {
+    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+  }
+}
+
+@keyframes secondToMiddle {
+  100% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg) translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes firstToSecond {
+  100% {
+    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+  }
+}
+
+
+@keyframes moveForward {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* FORWARD ANIMATION - END */
+
+/* BACKWARD ANIMATION - START */
+.carousel-track.moveBackwards {
+  .carousel-item {
+    animation: moveBackwards 0.5s ease-in;
+  }
+
+  .secondImage {
+    animation: secondToFirst 0.5s ease-in-out;
+  }
+
+  .middleImage {
+    animation: middleToSecond 0.5s ease-in-out;
+  }
+
+  .fourthImage {
+    animation: fourthToMiddle 0.5s ease-in-out;
+  }
+
+  .fifthImage {
+    animation: fifthToFourth 0.5s ease-in-out;
+  }
+}
+
+@keyframes fifthToFourth {
+  100% {
+    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+  }
+}
+
+@keyframes fourthToMiddle {
+  100% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg) translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes middleToSecond {
+  100% {
+    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+  }
+}
+
+@keyframes secondToFirst {
+  100% {
+    transform: scale(0.7) rotateX(-30deg) rotateY(60deg) translate3d(60px, 100px, 0px);
+  }
+}
+
+@keyframes moveBackwards {
+  100% {
+    transform: translateX(-200%);
+  }
+}
+/* BACKWARD ANIMATION - END */
+
+.hiddenFirst,
+.firstImage {
+  transform: scale(0.7) rotateX(-30deg) rotateY(60deg) translate3d(60px, 100px, 0px);
+}
+
+.secondImage {
+  transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+}
+
+.fourthImage {
+  transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+}
+
+.hiddenLast,
+.fifthImage {
+  transform: scale(0.7) rotateX(-30deg) rotateY(-60deg) translate3d(-60px, 100px, 0px);
+}
