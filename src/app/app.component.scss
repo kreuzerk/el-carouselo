@@ -8,8 +8,7 @@
 }
 
 .carousel-container {
-  width: 100%;
-  height: 350px;
+  height: 600px;
 
   display: flex;
 
@@ -21,9 +20,18 @@
     color: white;
     cursor: pointer;
     z-index: 1;
+    border-radius: 50%;
+    background: white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 
     span {
       font-size: 50px;
+      color: #0202b9;
     }
 
     &.left-btn {
@@ -52,7 +60,6 @@
     display: flex;
     align-items: stretch;
   }
-
 }
 
 /* FORWARD ANIMATION - START */
@@ -80,13 +87,13 @@
 
 @keyframes fourthToFifth {
   100% {
-    transform: scale(0.7) rotateX(-30deg) rotateY(-60deg) translate3d(-60px, 100px, 0px);
+    transform: scale(0.7) rotateX(-30deg) translateX(-80px) rotateY(-60deg) translate3d(-60px, 120px, 0px);
   }
 }
 
 @keyframes middleToFourth {
   100% {
-    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, 0px, -50px);
   }
 }
 
@@ -98,7 +105,7 @@
 
 @keyframes firstToSecond {
   100% {
-    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, 0px, -50px);
   }
 }
 
@@ -136,7 +143,7 @@
 
 @keyframes fifthToFourth {
   100% {
-    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+    transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, 0px, -50px);
   }
 }
 
@@ -148,13 +155,13 @@
 
 @keyframes middleToSecond {
   100% {
-    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+    transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, 0px, -50px);
   }
 }
 
 @keyframes secondToFirst {
   100% {
-    transform: scale(0.7) rotateX(-30deg) rotateY(60deg) translate3d(60px, 100px, 0px);
+    transform: scale(0.7) rotateX(-30deg) translateX(80px) rotateY(60deg) translate3d(60px, 120px, 0px);
   }
 }
 
@@ -167,18 +174,18 @@
 
 .hiddenFirst,
 .firstImage {
-  transform: scale(0.7) rotateX(-30deg) rotateY(60deg) translate3d(60px, 100px, 0px);
+  transform: scale(0.7) rotateX(-30deg) translateX(80px) rotateY(60deg) translate3d(60px, 120px, 0px);
 }
 
 .secondImage {
-  transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, -15px, -50px);
+  transform: scale(0.9) rotateX(20deg) rotateY(-40deg) translate3d(-50px, 0px, -50px);
 }
 
 .fourthImage {
-  transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, -15px, -50px);
+  transform: scale(0.9) rotateX(20deg) rotateY(40deg) translate3d(50px, 0px, -50px);
 }
 
 .hiddenLast,
 .fifthImage {
-  transform: scale(0.7) rotateX(-30deg) rotateY(-60deg) translate3d(-60px, 100px, 0px);
+  transform: scale(0.7) rotateX(-30deg) translateX(-80px) rotateY(-60deg) translate3d(-60px, 120px, 0px);
 }
